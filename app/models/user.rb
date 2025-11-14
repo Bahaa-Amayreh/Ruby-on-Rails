@@ -3,7 +3,9 @@ class User < ApplicationRecord
     before_save { self.email = email.downcase }
     validates :name, presence:{message:'Name is required'}, length:{minimum: 5, maximum: 50}
     validates :email, presence:true, length:{ minimum:10, maximum: 100}, 
-      uniqueness:true,format:{with: /\A([A-Za-z]+\.\d+@osu\.edu)|(\w+@gmail\.com)\Z/i }
-    # validates :password, presence:true, length:{minimum:6}
-    # has_secure_password
+      uniqueness:true,format:{with: /\A([A-Za-z]+\.\d+@osu\.edu)|(\w+@gmail\.com)\Z/i ,
+    message:'Only OSU or Gmail'
+    }
+    validates :password, presence:true, length:{minimum:6}
+    has_secure_password
 end

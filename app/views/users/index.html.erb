@@ -1,0 +1,33 @@
+<table class="mytable">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Created</th>
+            <th>Updated</th>
+            <th>....</th>
+            <th>....</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @users.each do |user|%>
+        <tr>
+            <td><%= user.id%></td>
+            <td><%= user.name%></td>
+            <td><%= user.phone%></td>
+            <td><%= user.email%></td>
+            <td><%= user.created_at%></td>
+            <td><%= user.updated_at%></td>
+            <td>...</td>
+            <td>...</td>
+        </tr>
+        <%end%>
+    </tbody>
+    <tfoot>
+        <tr>
+          <td colspan="8">End of User List :)</td>
+        </tr>
+    </tfoot>
+</table>
