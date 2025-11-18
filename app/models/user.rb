@@ -6,6 +6,6 @@ class User < ApplicationRecord
       uniqueness:true,format:{with: /\A([A-Za-z]+\.\d+@osu\.edu)|(\w+@gmail\.com)\Z/i ,
     message:'Only OSU or Gmail'
     }
-    validates :password, presence:true, length:{minimum:6}
+    validates :password, presence:true, length:{minimum:6, maximum:20}
     has_secure_password
 end

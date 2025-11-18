@@ -1,6 +1,6 @@
 require 'faker'
 
-20.times do
+80.times do
   first_name = Faker::Name.first_name.downcase
   last_name = Faker::Name.last_name.downcase
   random_number = rand(1..200)
