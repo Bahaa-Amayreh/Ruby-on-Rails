@@ -16,8 +16,14 @@ class UsersController < ApplicationController
     end
   end
 
-  def new 
+  def new
+    #debugger
     @user=User.new
+    Rails.logger.debug "*****************************************"
+    Rails.logger.debug @user.attributes.inspect
+    Rails.logger.debug "*****************************************"
+
+
   end
 
   def create
